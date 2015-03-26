@@ -13,7 +13,6 @@
 -- The Porter stemmer was written by Dmitry Antonyuk, and can
 -- be found at: "tartarus.org/~martin/PorterStemmer/haskell.txt"
 
-module Main where
 import Data.Char
 import Data.List.Split
 
