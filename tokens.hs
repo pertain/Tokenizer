@@ -30,7 +30,9 @@ main = do
 	writeFile "output2-stopwords.txt" $ stopFilter (lines $ tokenizer contents) (lines sw)
 
 -- The tokenizer function splits the input text at any non-letter character
+tokenizer :: [Char] -> String
 tokenizer n = unlines $ filter (not.null) $ endByOneOf nonLetters $ map toLower n
 
 -- The stopFilter function strips all stopwords from the tokenizer output
+stopFilter :: [String] -> [String] -> String
 stopFilter n m = unlines $ filter (\x -> not (elem x m)) n
