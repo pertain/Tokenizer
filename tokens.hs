@@ -32,7 +32,7 @@ main = do
 	let swList = lines stopwordFile
 	let tokens = tokenize inputFile
 	writeFile tokensOutFile (unlines $ tokens)
-	writeFile stopwordsOutFile (unlines $ rmStopwords tokens swList)
+	writeFile stopwordsOutFile (unlines $ rmStopwords swList tokens)
 
 -- converts string to lowercase
 lowerString :: String -> String
@@ -48,4 +48,4 @@ tokenize s = rmNulls $ endByOneOf nonLetters (lowerString s)
 
 -- strips all stopwords from tokens list
 rmStopwords :: [String] -> [String] -> [String]
-rmStopwords tks sws = filter (`notElem` sws) tks
+rmStopwords sws = filter (`notElem` sws)
