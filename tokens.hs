@@ -31,7 +31,7 @@ main = do
 	stopwordFile <- readFile stopwordFilename
 	let swList = lines stopwordFile
 	let tokens = tokenize inputFile
-	writeFile tokensOutFile (unlines $ tokens)
+	writeFile tokensOutFile (unlines tokens)
 	writeFile stopwordsOutFile (unlines $ rmStopwords swList tokens)
 
 -- converts string to lowercase
