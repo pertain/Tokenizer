@@ -4,11 +4,11 @@
 -- CSC 320 - Assignment 03
 --
 -- This program is broken into three parts:
---		(1)	Read in and tokenize a file containing English text
---		(2)	Read in a file of stopwords and remove any words
---			contained in the file from the tokenizer output
---		(3)	Pass the tokenized output, sans stopwords to a
---			Porter stemmer (a separate Haskell program).
+--      (1) Read in and tokenize a file containing English text
+--      (2) Read in a file of stopwords and remove any words
+--          contained in the file from the tokenizer output
+--      (3) Pass the tokenized output, sans stopwords to a
+--          Porter stemmer (a separate Haskell program).
 -- The tokenizer and stopword remover were both written by myself.
 -- The Porter stemmer was written by Dmitry Antonyuk, and can
 -- be found at: "tartarus.org/~martin/PorterStemmer/haskell.txt"
@@ -26,13 +26,13 @@ stopwordsOutFile = "no_stopwords"
 nonLetters = map chr $ [00 .. 64] ++ [91 .. 96] ++ [123 .. 126]
 
 main = do
-	-- Read in both the input and stopword files
-	inputFile <- readFile inputFilename
-	stopwordFile <- readFile stopwordFilename
-	let swList = lines stopwordFile
-	let tokens = tokenize inputFile
-	writeFile tokensOutFile (unlines tokens)
-	writeFile stopwordsOutFile (unlines $ rmStopwords swList tokens)
+    -- Read in both the input and stopword files
+    inputFile <- readFile inputFilename
+    stopwordFile <- readFile stopwordFilename
+    let swList = lines stopwordFile
+    let tokens = tokenize inputFile
+    writeFile tokensOutFile (unlines tokens)
+    writeFile stopwordsOutFile (unlines $ rmStopwords swList tokens)
 
 -- converts string to lowercase
 lowerString :: String -> String
