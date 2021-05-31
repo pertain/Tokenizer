@@ -1,11 +1,11 @@
-#Tokenizer & Stopword Remover
+# Tokenizer & Stopword Remover
 
-This was an assignment for my Information Retrieval course (Fall 2014).
+Assignment in Information Retrieval course.
 
-There are two purposes:
+This program performs two tasks:
 
-1. Tokenize input text (i.e split at spaces etc.)
-2. Read in a list of stopwords and remove all instances from the text
+1. Tokenize text from input file (i.e split at spaces etc.)
+2. Read in a list of stopwords and remove all instances from tokenized input
 
-The final output is intended to be passed to a Porter stemmer, where
-each remaining token is stemmed.
+The final output is structured such that it can be passed to
+a Porter stemmer (not included) for token stemming.
